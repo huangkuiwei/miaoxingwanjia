@@ -3,21 +3,18 @@
 @import './jieguo_wenan.wxss';
 @import './wenan.wxss';
 
-page {
-  background: url("https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/index/bg.png") left top/100% 388rpx no-repeat;
-}
-
 .container_head {
+  width: 750rpx;
+  height: 70rpx;
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  padding-top: 104rpx;
-}
-
-.container_head text {
-  font-weight: 500;
-  font-size: 31rpx;
-  color: #000000;
+  align-items: center;
+  position: fixed;
+  left: 0rpx;
+  top: 0rpx;
+  background-color: white;
+  z-index: 999;
 }
 
 .show_type_item_view {
@@ -65,7 +62,7 @@ page {
   width: 750rpx;
   min-height: 100%;
   position: absolute;
-  top: 180rpx;
+  top: 70rpx;
   left: 0rpx;
   right: 0rpx;
   margin-bottom: 50rpx;
@@ -91,7 +88,7 @@ page {
 .view_sousuo_input {
   width: 720rpx;
   height: 64rpx;
-  background: #ffffff;
+  background: rgba(240, 239, 239, 1);
   border-radius: 30rpx;
   padding-left: 37rpx;
   padding-right: 37rpx;

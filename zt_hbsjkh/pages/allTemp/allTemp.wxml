@@ -2,7 +2,7 @@
 	<view class="view_sousuo" bindtap="go_sousuo">
 		<view class="view_sousuo_input">
 			<image src="../../resource/img/icon_sousuo.png"></image>
-			<text>搜索模板名字</text>
+			<text>搜索模板</text>
 		</view>
 	</view>
 	<view class="fenlei">

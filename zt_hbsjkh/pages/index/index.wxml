@@ -1,5 +1,12 @@
 <view class="container_head">
-  <text>名字待定</text>
+  <!-- <view class="show_type_item_view" data-index='{{0}}' bindtap='switchShow' style='color:{{mlib_style.fontcolor}};'>
+		<view class="show_type_item_name {{show_type==0?'show_type_item_name_active':''}}">手机海报</view>
+		<view class="{{show_type==0?'hengxian_active':'hengxian'}}"></view>
+	</view> -->
+  <!-- <view class="show_type_item_view" data-index='{{1}}' bindtap='switchShow' style='color:{{mlib_style.fontcolor}};'>
+		<view class="show_type_item_name {{show_type==1?'show_type_item_name_active':''}}">文案馆</view>
+		<view class="{{show_type==1?'hengxian_active':'hengxian'}}"></view>
+	</view> -->
 </view>
 <view wx:if="{{(fenlei_guding==1)&&(show_type==1)}}" class="select_view select_view_guding">
   <view class="select_title">
@@ -19,7 +26,7 @@
   <view class="view_sousuo" bindtap="go_sousuo">
     <view class="view_sousuo_input">
       <image src="../../resource/img/icon_sousuo.png"></image>
-      <text>搜索模板名字</text>
+      <text>搜索模板</text>
     </view>
   </view>
   <view wx:if="{{cur_fenlei_index==-1}}" class="tuijian_content">
