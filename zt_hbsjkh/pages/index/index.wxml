@@ -1,12 +1,5 @@
 <view class="container_head">
-  <!-- <view class="show_type_item_view" data-index='{{0}}' bindtap='switchShow' style='color:{{mlib_style.fontcolor}};'>
-		<view class="show_type_item_name {{show_type==0?'show_type_item_name_active':''}}">手机海报</view>
-		<view class="{{show_type==0?'hengxian_active':'hengxian'}}"></view>
-	</view> -->
-  <!-- <view class="show_type_item_view" data-index='{{1}}' bindtap='switchShow' style='color:{{mlib_style.fontcolor}};'>
-		<view class="show_type_item_name {{show_type==1?'show_type_item_name_active':''}}">文案馆</view>
-		<view class="{{show_type==1?'hengxian_active':'hengxian'}}"></view>
-	</view> -->
+  <view>{{ shouye_info.title }}</view>
 </view>
 <view wx:if="{{(fenlei_guding==1)&&(show_type==1)}}" class="select_view select_view_guding">
   <view class="select_title">
@@ -26,7 +19,7 @@
   <view class="view_sousuo" bindtap="go_sousuo">
     <view class="view_sousuo_input">
       <image src="../../resource/img/icon_sousuo.png"></image>
-      <text>搜索模板</text>
+      <text>搜索模板名字</text>
     </view>
   </view>
   <view wx:if="{{cur_fenlei_index==-1}}" class="tuijian_content">
@@ -58,12 +51,13 @@
       <view class="tuijian_haibao_title">
         <view class="left">
             {{item.name}}
-             <image style="width: 32rpx" wx:if="{{ item.hot }}" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/index/hot.png" mode="widthFix"></image>
-             <image style="width: 36rpx" wx:if="{{ item.sale }}" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/index/sale.png" mode="widthFix"></image>
+             <!-- <image style="width: 32rpx" wx:if="{{ item.hot }}" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/index/hot.png" mode="widthFix"></image> -->
+             <!-- <image style="width: 36rpx" wx:if="{{ item.sale }}" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/index/sale.png" mode="widthFix"></image> -->
         </view>
         <view class="right" bindtap="tuijian_go_fenlei" data-index="{{index}}">
-            更多
-            <image src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/index/more.png" mode="widthFix"></image>
+            查看全部
+            <!-- <image src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/index/more.png" mode="widthFix"></image> -->
+          <text style="margin-left: 20rpx">></text>
         </view>
       </view>
       <view class="tuijian_haibao_content">
@@ -74,7 +68,7 @@
       </view>
       <view class="tuijian_haibao_btns">
         <view bindtap="huanyipi" data-index="{{index}}">
-            <image src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/index/refresh.png" mode="widthFix"></image>
+            <image src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/refresh.png" mode="widthFix"></image>
             换一换
         </view>
       </view>

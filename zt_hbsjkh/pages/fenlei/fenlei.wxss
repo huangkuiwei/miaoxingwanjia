@@ -1,11 +1,37 @@
 
 @import './jieguo.wxss';
+
+page {
+  background: url("https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/index/bg.png") left top/100% 388rpx no-repeat;
+}
+
+.container_head {
+  width: 750rpx;
+  height: 70rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0rpx;
+  right: 0;
+  top: 0;
+  padding-top: 100rpx;
+  text-align: center;
+  z-index: 999;
+  font-weight: 500;
+  font-size: 31rpx;
+  color: #000000;
+}
+
 .container {
   width: 750rpx;
-  height: 100%;
   position: absolute;
+  top: 170rpx;
   left: 0rpx;
-  top: 0rpx;
+  right: 0rpx;
+  overflow: auto;
+  bottom: 0;
 }
 .view_sousuo {
   width: 720rpx;
@@ -27,7 +53,7 @@
 .view_sousuo_input {
   width: 720rpx;
   height: 64rpx;
-  background: rgba(240, 239, 239, 1);
+  background: #ffffff;
   border-radius: 30rpx;
   padding-left: 37rpx;
   padding-right: 37rpx;
@@ -59,6 +85,7 @@
   right: 0rpx;
   top: 111rpx;
   bottom: 0rpx;
+  overflow: hidden;
 }
 
 .fenlei_head {

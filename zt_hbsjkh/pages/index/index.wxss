@@ -3,6 +3,10 @@
 @import './jieguo_wenan.wxss';
 @import './wenan.wxss';
 
+page {
+  background: url("https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/index/bg.png") left top/100% 388rpx no-repeat;
+}
+
 .container_head {
   width: 750rpx;
   height: 70rpx;
@@ -12,9 +16,14 @@
   align-items: center;
   position: fixed;
   left: 0rpx;
-  top: 0rpx;
-  background-color: white;
+  right: 0;
+  top: 0;
+  padding-top: 100rpx;
+  text-align: center;
   z-index: 999;
+  font-weight: 500;
+  font-size: 31rpx;
+  color: #000000;
 }
 
 .show_type_item_view {
@@ -62,7 +71,7 @@
   width: 750rpx;
   min-height: 100%;
   position: absolute;
-  top: 70rpx;
+  top: 170rpx;
   left: 0rpx;
   right: 0rpx;
   margin-bottom: 50rpx;
@@ -88,7 +97,7 @@
 .view_sousuo_input {
   width: 720rpx;
   height: 64rpx;
-  background: rgba(240, 239, 239, 1);
+  background: #ffffff;
   border-radius: 30rpx;
   padding-left: 37rpx;
   padding-right: 37rpx;
@@ -280,14 +289,14 @@
 }
 
 .tuijian_haibao_title {
-  width: 708rpx;
+  width: 696rpx;
   height: 34rpx;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-left: 6rpx;
-  padding-right: 6rpx;
+  padding-left: 12rpx;
+  padding-right: 12rpx;
 }
 
 .tuijian_haibao_title .left {
@@ -300,6 +309,18 @@
   font-weight: 600;
   display: flex;
   align-items: center;
+  padding-left: 14rpx;
+  position: relative;
+}
+
+.tuijian_haibao_title .left:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4rpx;
+  width: 4rpx;
+  height: 28rpx;
+  background: #4DF4F8;
 }
 
 .tuijian_haibao_title .left image {
@@ -376,7 +397,7 @@
   border-radius: 7rpx;
   line-height: 41rpx;
   font-size: 22rpx;
-  color: #47C92C;
+  color: #000000;
   font-family: SimHei;
   font-weight: 400;
    display: flex;

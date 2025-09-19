@@ -20,6 +20,25 @@
     "bigPackageSizeSupport": false,
     "useIsolateContext": true
   },
-  "condition": {},
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "zt_hbsjkh/pages/authorization/authorization",
+          "pathName": "zt_hbsjkh/pages/authorization/authorization",
+          "query": "",
+          "scene": null,
+          "launchMode": "default"
+        },
+        {
+          "name": "zt_hbsjkh/pages/wode/wode",
+          "pathName": "zt_hbsjkh/pages/wode/wode",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
   "libVersion": "3.5.6"
 }

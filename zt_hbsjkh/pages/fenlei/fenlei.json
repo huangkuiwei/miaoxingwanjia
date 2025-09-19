@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText": "模板中心",
+  "navigationStyle": "custom",
   "usingComponents": {
     "mypop": "../../../component/pop/pop"
   }

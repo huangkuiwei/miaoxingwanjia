@@ -1,10 +1,7 @@
 <!-- 初始化界面 -->
 <view class='foot' wx:if="{{btn_status[0]==-1}}">
   <view class='foot_left'>
-  <view class='foot_left_item' bindtap="quash">
-        <image src='https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/dingzhi/icon1.png'></image>
-        <text>撤销</text>
-      </view>
+
     <view class='foot_left_item' bindtap="add_txt">
       <image src='https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/dingzhi/icon2.png'></image>
       <text>文字</text>
@@ -13,9 +10,12 @@
       <image src='https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/dingzhi/icon3.png'></image>
       <text>加图</text>
     </view>
-     <view class='foot_left_item' bindtap='reset'>
-          <image src='https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/dingzhi/icon4.png'></image>
-          <text>重做</text>
-        </view>
+
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="foot_right1" wx:if="{{(member.realtel=='')&&(gettel==1)}}">
+        <image style="width: 184rpx" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/dingzhi/save.png" mode="widthFix"></image>
+    </button>
+    <view class='foot_right1' bindtap='shenhe' wx:else>
+        <image style="width: 184rpx" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/dingzhi/save.png" mode="widthFix"></image>
+    </view>
   </view>
 </view>

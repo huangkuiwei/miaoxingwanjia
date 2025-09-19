@@ -23,6 +23,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.foot_right1 {
+  margin-left: 50rpx;
+}
+
 .foot_left_item image{
   width: 35rpx;
   height: 35rpx;

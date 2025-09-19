@@ -1,9 +1,9 @@
 <include src="../shouquan/shouquan" />
 <view class='container'>
   <view class="head-container">
-    <view class="bg">
-      <image mode="widthFix" src="{{ member.avatar || 'https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/wode/bg.png' }}"/>
-    </view>
+    <!-- <view class="bg"> -->
+    <!--   <image mode="widthFix" src="{{ member.avatar || 'https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/wode/bg.png' }}"/> -->
+    <!-- </view> -->
 
     <view class="head">
         <!-- <image src="../../resource/img/bg_wode.png" class="bg_head"></image> -->
@@ -13,7 +13,7 @@
             <!-- <open-data type="userAvatarUrl"></open-data> -->
             <image src="{{ member.avatar }}" mode="widthFix" class="touxiang"></image>
           </view>
-          <view style="display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20rpx; color: #000000;">
+          <view style="display: flex; flex-direction: column; justify-content: center; font-size: 20rpx; color: #000000;">
             <view class="nickname" wx:if="{{(member.avatar=='')&&(member.nickname=='')}}" bindtap="login">点击登录</view>
             <!-- <open-data type="userNickName" class="nickname" wx:else></open-data> -->
 
@@ -75,22 +75,20 @@
 
   <view class="options1">
    <view class="vip-banner" bindtap="go_vip">
-        <image class="vip-icon"mode="widthFix" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/wode/vip-icon.png"></image>
-        <text class="word1">开通会员</text>
-        <text class="word2">享更多权益</text>
-        <image class="sale-btn"mode="widthFix" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/wode/sale-btn.png"></image>
+        <image class="sale-btn" mode="widthFix" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/wode/vip-icon.png"></image>
+        <image class="arrow" mode="widthFix" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/wode/arrow2.png"></image>
    </view>
 
     <view class="wode_content">
         <view class="wode_content_item" bindtap="go_vip">
-          <image mode="widthFix" class="wode_content_item_icon" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/wode/icon1.png"></image>
+          <image mode="widthFix" class="wode_content_item_icon" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/wode/icon1.png"></image>
           <text class="wode_content_item_name">会员权益</text>
-          <image class="wode_content_item_arrow" style="width: 14rpx" mode="widthFix" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/wode/arrow-right.png"></image>
+          <image class="wode_content_item_arrow" style="width: 12rpx" mode="widthFix" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/wode/arrow.png"></image>
         </view>
         <view class="wode_content_item" bindtap="go_shoucang">
-          <image mode="widthFix" class="wode_content_item_icon" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/wode/icon2.png"></image>
+          <image mode="widthFix" class="wode_content_item_icon" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/wode/icon2.png"></image>
           <text class="wode_content_item_name">我的收藏</text>
-         <image class="wode_content_item_arrow" style="width: 14rpx" mode="widthFix" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/wode/arrow-right.png"></image>
+         <image class="wode_content_item_arrow" style="width: 12rpx" mode="widthFix" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/wode/arrow.png"></image>
         </view>
         <!-- <view class="wode_content_item" bindtap="go_pinfo">
           <image mode="widthFix" class="wode_content_item_icon" src="../../resource/img/icon_geren_info.png"></image>
@@ -118,15 +116,15 @@
         </view>
 
         <view class="wode_content_item" bindtap="go_tel">
-          <image mode="widthFix" class="wode_content_item_icon" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/wode/icon3.png"></image>
+          <image mode="widthFix" class="wode_content_item_icon" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/wode/icon1.png"></image>
           <text class="wode_content_item_name">联系电话</text>
           <text class="wode_content_item_arrow">{{info.tel}}</text>
         </view>
         <!-- TODO 暂时隐藏客服 -->
         <!-- <view class="wode_content_item" style="border:none;">
-          <image mode="widthFix" class="wode_content_item_icon" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/wode/icon4.png"></image>
+          <image mode="widthFix" class="wode_content_item_icon" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/wode/icon4.png"></image>
           <text class="wode_content_item_name">微信客服</text>
-          <image class="wode_content_item_arrow" style="width: 14rpx" mode="widthFix" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/wode/arrow-right.png"></image>
+          <image class="wode_content_item_arrow" style="width: 12rpx" mode="widthFix" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/wode/arrow.png"></image>
           <button bindtap="openCustomerServiceChat"></button>
         </view> -->
       </view>
