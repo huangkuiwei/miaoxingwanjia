@@ -1,6 +1,6 @@
 page {
   padding: 0 50rpx;
-  background: #F5F5F5 !important;
+  background: linear-gradient(158deg, #A1FDFF70 0%, #FEFEFE70 73%) !important;
   box-sizing: border-box;
 }
 
@@ -121,15 +121,16 @@ page {
 }
 
 .formItem .getCapcha {
-  border-radius: 8rpx;
+  border-radius: 50rpx;
   color: #fff;
   font-size: 28rpx;
-  height: 58rpx;
-  line-height: 58rpx;
+  height: 50rpx;
+  line-height: 50rpx;
   margin-right: -10rpx;
   padding: 0;
   text-align: center;
-  width: 160rpx
+  width: 160rpx;
+  font-weight: 500;
 }
 
 .formItem .getCapcha::after {
@@ -152,7 +153,7 @@ page {
   width: 220rpx;
   font-size: 32rpx;
   left: calc(100% + 20rpx);
-  background: #78EB60;
+  background: #4EF1F5;
   color: #000;
 }
 
@@ -1195,7 +1196,7 @@ textarea {
 }
 
 .tckBg {
-  padding: 100rpx 0;
+  padding: 100rpx 0 10rpx;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -23,6 +23,7 @@ Page({
     cur_down_muban_index:0,
     scroll_top:0,
     showProtocolDialog: false,
+    showAllType: false
   },
 
   argee() {
@@ -236,8 +237,24 @@ Page({
   showAll:function(event){
     let cur_erji_fenlei_id = event.currentTarget.dataset.cur_erji_fenlei_id
 
-    wx.navigateTo({
-      url: `/zt_hbsjkh/pages/allTemp/allTemp?cur_fenlei_id=${this.data.cur_fenlei_id}&cur_erji_fenlei_id=${cur_erji_fenlei_id}`,
+    this.setData({
+      cur_erji_fenlei_id: Number(cur_erji_fenlei_id)
+    })
+
+    // wx.navigateTo({
+    //   url: `/zt_hbsjkh/pages/allTemp/allTemp?cur_fenlei_id=${this.data.cur_fenlei_id}&cur_erji_fenlei_id=${cur_erji_fenlei_id}`,
+    // })
+  },
+
+  onShowAllType: function () {
+    this.setData({
+      showAllType: true
+    })
+  },
+
+  hideType: function () {
+    this.setData({
+      showAllType: false
     })
   },
 
@@ -426,6 +443,8 @@ Page({
       cur_fenlei_id:id,
       cur_erji_fenlei:0,
       scroll_top:0,
+      cur_erji_fenlei_id:0,
+      showAllType: false
     })
   },  
   /**
@@ -452,6 +471,12 @@ Page({
       success(res) {
         console.log(res);
         var fenlei_info = res.data.data.d;
+
+        for (let i = 0; i < fenlei_info.length; ++i) {
+          // TODO 分类图标
+          fenlei_info[i].icon = 'https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/fenlei/icon1.png'
+        }
+
         that.setData({
           fenlei_info: fenlei_info,
           dzsetting:res.data.data.dzsetting,

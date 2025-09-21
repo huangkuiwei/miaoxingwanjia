@@ -10,39 +10,83 @@
 		</view>
 	</view>
 	<view class="fenlei">
-		<scroll-view class='fenlei_head' scrollWithAnimation="true" scroll-y="true"
-								 scroll-into-view="{{'id'+(cur_fenlei-5)}}">
-			<view wx:for="{{fenlei_info}}" class="scroll-view-item {{cur_fenlei==index?'active':''}}" data-id="{{item.info.id}}" data-index='{{index}}'
-						bindtap='change_fenlei' id="{{'id'+index}}">
-				<view class="yellow_bar" wx:if="{{cur_fenlei==index}}"></view>
-				<view class="right {{cur_fenlei==index?'active':''}}">{{item.info.name}}</view>
+		<view class='temp-types'>
+			<scroll-view class="temp-types-scroll" scrollWithAnimation="true" scroll-x="true" enable-flex>
+				<view
+					wx:for="{{fenlei_info}}"
+					class="temp-types-item {{cur_fenlei==index?'active1':''}}"
+					data-id="{{item.info.id}}"
+					data-index='{{index}}'
+					bindtap='change_fenlei'
+					id="{{'id'+index}}"
+				>
+					<image mode="aspectFit" style="width: 80rpx; height: 80rpx" src="{{ item.icon }}"/>
+					<view class="type-name">{{item.info.name}}</view>
+				</view>
+			</scroll-view>
+
+			<view wx:if="{{ fenlei_info.length }}" class="all-btn" bindtap="onShowAllType">
+				<text>全</text>
+				<text>部</text>
 			</view>
-		</scroll-view>
-		<view class="fenlei_content">
-			<view wx:for="{{fenlei_info[cur_fenlei].erji}}" id="{{'id'+index}}" data-index='{{index}}'>
-				<view class="item-name">
-					<view>{{item.name}}</view>
+
+			<view class="float-type-list" wx:if="{{ showAllType }}">
+				<view class="float-type-list-content">
 					<view
-						style="color: #727272; display: flex; align-items: center; justify-content: center;"
-						data-cur_erji_fenlei_id="{{item.id}}"
-						bindtap="showAll"
+						wx:for="{{fenlei_info}}"
+						class="temp-types-item temp-types-item1 {{cur_fenlei==index?'active1':''}}"
+						data-id="{{item.info.id}}"
+						data-index='{{index}}'
+						bindtap='change_fenlei'
+						id="{{'id'+index}}"
 					>
-						<text style="padding-right: 14rpx">全部</text>
-						<image src="../../resource/img/arrow-right.png" mode="widthFix" style="width: 12rpx;"></image>
+						<image mode="aspectFit" style="width: 80rpx; height: 80rpx" src="{{ item.icon }}"/>
+						<view class="type-name">{{item.info.name}}</view>
 					</view>
 				</view>
 
-				<scroll-view class="fenlei_content_show" scrollWithAnimation="true" scroll-x="true"
-										 bindscrolltolower='refresh_fenlei' style="{{fenlei_info[cur_fenlei].erji.length==0?'top:0rpx;':''}}" scroll-top="{{scroll_top}}">
-					<view class="fenlei_content_show_left">
-						<view wx:for="{{fenlei_info[cur_fenlei].muban[index]}}" class="muban_item">
-							<image src="{{item.icon}}" mode="aspectFill" bindtap="go_dingzhi"
-										 data-id="{{item.id}}"></image>
-							<image src="../../resource/img/btn_download.png" mode="aspectFill" class="btn_download" bindtap="show_download"
-										 data-index="{{index}}" data-muban="{{item}}"></image>
+				<view class="hide-all" bindtap="hideType">
+					<text>点击收起 </text>
+					<image mode="widthFix"src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/fenlei/arrow2.png"/>
+				</view>
+			</view>
+		</view>
+
+		<view class="fenlei-bottom">
+			<view wx:if="{{ showAllType }}" class="mask-bg" style="background: {{ showAllType ? '#00000080' : '' }}"></view>
+
+			<scroll-view
+				class='fenlei_head'
+				scrollWithAnimation="true"
+				scroll-y="true"
+				scroll-into-view="{{'id'+(cur_fenlei-5)}}"
+			>
+				<view
+					wx:for="{{fenlei_info[cur_fenlei].erji}}"
+					class="scroll-view-item {{cur_erji_fenlei_id==item.id?'active':''}}"
+					data-id="{{item.id}}"
+					bindtap='showAll'
+					data-cur_erji_fenlei_id="{{item.id}}"
+				>
+					<view class="yellow_bar" wx:if="{{cur_erji_fenlei_id==item.id}}"></view>
+					<view class="right {{cur_erji_fenlei_id==item.id?'active':''}}">{{item.name}}</view>
+				</view>
+			</scroll-view>
+
+			<view class="fenlei_content">
+				<block wx:for="{{fenlei_info[cur_fenlei].erji}}" id="{{'id'+index}}" data-index='{{index}}'>
+					<scroll-view wx:if="{{ item.id == cur_erji_fenlei_id }}" class="fenlei_content_show" scrollWithAnimation="true" scroll-y="true"
+											 bindscrolltolower='refresh_fenlei' scroll-top="{{scroll_top}}">
+						<view class="fenlei_content_show_left">
+							<view wx:for="{{fenlei_info[cur_fenlei].muban[index]}}" class="muban_item">
+								<image src="{{item.icon}}" mode="aspectFill" bindtap="go_dingzhi"
+											 data-id="{{item.id}}"></image>
+								<image src="../../resource/img/btn_download.png" mode="aspectFill" class="btn_download" bindtap="show_download"
+											 data-index="{{index}}" data-muban="{{item}}"></image>
+							</view>
 						</view>
-					</view>
-				</scroll-view>
+					</scroll-view>
+				</block>
 			</view>
 		</view>
 	</view>

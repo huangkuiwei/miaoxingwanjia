@@ -1,23 +1,23 @@
-const app = getApp();
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    yue:"0.00",
-    member:null,
-    info:null,
-    show_vip:0,
-    sys_ios:1,//1代表是苹果系统
-    show_tips:0,
-    shouye_info:null,
-    show_shouyi:0,
+    yue: '0.00',
+    member: null,
+    info: null,
+    show_vip: 0,
+    sys_ios: 1,//1代表是苹果系统
+    show_tips: 0,
+    shouye_info: null,
+    show_shouyi: 0,
     shoucang: 0,
     wenan: 0,
-    zuopin:0,
-    is_login:0,
-    showProtocolDialog: false,
+    zuopin: 0,
+    is_login: 0,
+    showProtocolDialog: false
   },
 
   argee() {
@@ -28,28 +28,25 @@ Page({
     })
   },
 
-  show_shouyi_view:function(){
-    if(this.data.show_shouyi==0)
-    {
+  show_shouyi_view: function () {
+    if (this.data.show_shouyi == 0) {
       this.setData({
-        show_shouyi:1,
+        show_shouyi: 1
       })
-    }
-    else
-    {      
+    } else {
       this.setData({
-        show_shouyi:0,
+        show_shouyi: 0
       })
     }
   },
-  copy:function(){
+  copy: function () {
     wx.setClipboardData({
-      data: this.data.member.uid,
+      data: this.data.member.uid
     })
   },
-  go_pinfo:function(){
+  go_pinfo: function () {
     wx.navigateTo({
-      url: '../pinfo/pinfo',
+      url: '../pinfo/pinfo'
     })
   },
   /**
@@ -61,176 +58,173 @@ Page({
     }
 
     console.log(this.data.member)
-    if ( !this.data.member.tel) return wx.navigateTo({
-      url: "../authorization/authorization?showErrorToast=true",
-      success: function (t) {},
-      fail: function (t) {},
-      complete: function (t) {}
+    if (!this.data.member.tel) return wx.navigateTo({
+      url: '../authorization/authorization?showErrorToast=true',
+      success: function (t) {
+      },
+      fail: function (t) {
+      },
+      complete: function (t) {
+      }
     }), !1
   },
-  go_vip:function(e){
+  go_vip: function (e) {
     wx.navigateTo({
-      url: '../vip/vip',
-    })  
+      url: '../vip/vip'
+    })
   },
   /**
    * 前往海报界面
    */
-  go_haibao:function(){
+  go_haibao: function () {
     wx.navigateTo({
-      url: '../haibao/haibao',
+      url: '../haibao/haibao'
     })
   },
-  ceshi:function(){
-    var that=this;
-    var data = new Object();
-    data.apiname = 'wxtxt';
+  ceshi: function () {
+    var that = this
+    var data = new Object()
+    data.apiname = 'wxtxt'
     app.mlib.request({
       'model': 'shenhe',
       'data': data,
       'cachetime': '0',
       success(res) {
-        console.log(res.data.data.d);
+        console.log(res.data.data.d)
       },
       fail(res) {
-        console.log(res);
+        console.log(res)
       }
     })
   },
   /**
    * 打电话
    */
-  go_tel:function(){
+  go_tel: function () {
     // this.ceshi();
     // return;
     wx.makePhoneCall({
-      phoneNumber: this.data.info.tel,
+      phoneNumber: this.data.info.tel
     })
   },
   /**
    * 进入我的团队
    */
-  go_tuandui:function(){
+  go_tuandui: function () {
     wx.navigateTo({
-      url: '../tuandui/tuandui',
+      url: '../tuandui/tuandui'
     })
   },
   /**
    * 进入取现界面
    */
-  go_quxian:function(){
+  go_quxian: function () {
     wx.navigateTo({
-      url: '../quxian/quxian',
+      url: '../quxian/quxian'
     })
   },
   /**
    * 进入收藏界面
    */
-  go_shoucang:function(){
+  go_shoucang: function () {
     wx.navigateTo({
-      url: '../shoucang/shoucang',
+      url: '../shoucang/shoucang'
     })
   },
   /**
    * 登录
    */
   login: function () {
-    console.log('登录');
-    wx.setStorageSync('userInfo', '');
-    var that = this;
+    console.log('登录')
+    wx.setStorageSync('userInfo', '')
+    var that = this
     app.mlib.getUserInfo(this, function (response) {
-      var data = new Object();
-      data.apiname = 'wode';
+      var data = new Object()
+      data.apiname = 'wode'
       app.mlib.request({
         'model': 'user',
         'data': data,
         'cachetime': '0',
         success(res) {
-          console.log(res);
+          console.log(res)
           that.setData({
-            member:res.data.data.d.member
+            member: res.data.data.d.member
           })
-          wx.setStorageSync('is_login', 1);
+          wx.setStorageSync('is_login', 1)
           that.setData({
-            is_login:1
+            is_login: 1
           })
         },
         fail(res) {
-          console.log(res);
+          console.log(res)
         }
       })
     }, function () {
       wx.showToast({
-        title: 'failed',
+        title: 'failed'
       })
-    });
-  },
-  inite_data:function(){
-    var fenxiao=this.data.fenxiao;
-    //    
-    if(fenxiao.yuekalogo=='')
-    {
-      fenxiao.yuekalogo = "../../resource/img/vip-icon.png";
-    }
-    if(fenxiao.jikalogo=='')
-    {
-      fenxiao.jikalogo = "../../resource/img/vip-icon.png";
-    }
-    if(fenxiao.niankalogo=='')
-    {
-      fenxiao.niankalogo = "../../resource/img/vip-icon.png";
-    }
-    this.setData({
-      fenxiao:fenxiao
     })
   },
-  inite:function(){
-    var that=this;
-    var data = new Object();
-    data.apiname = 'wode';
+  inite_data: function () {
+    var fenxiao = this.data.fenxiao
+    //    
+    if (fenxiao.yuekalogo == '') {
+      fenxiao.yuekalogo = '../../resource/img/vip-icon.png'
+    }
+    if (fenxiao.jikalogo == '') {
+      fenxiao.jikalogo = '../../resource/img/vip-icon.png'
+    }
+    if (fenxiao.niankalogo == '') {
+      fenxiao.niankalogo = '../../resource/img/vip-icon.png'
+    }
+    this.setData({
+      fenxiao: fenxiao
+    })
+  },
+  inite: function () {
+    var that = this
+    var data = new Object()
+    data.apiname = 'wode'
     app.mlib.request({
       'model': 'user',
       'data': data,
       'cachetime': '0',
       success(res) {
-        console.log(res);
+        console.log(res)
         that.setData({
-          yue:res.data.data.d.yue,
-          member:res.data.data.d.member,
-          info:res.data.data.d.info,
-          shouye_info:res.data.data.d.shouye,
+          yue: res.data.data.d.yue,
+          member: res.data.data.d.member,
+          info: res.data.data.d.info,
+          shouye_info: res.data.data.d.shouye,
           shoucang: res.data.data.d.shoucang,
           wenan: res.data.data.d.wenan,
-          zuopin:res.data.data.d.zuopin,
+          zuopin: res.data.data.d.zuopin
         })
         that.onUser()
-        that.data.fenxiao=res.data.data.d.fenxiao;
-        that.inite_data();
-        if(that.data.member.vip>0)//是会员
+        that.data.fenxiao = res.data.data.d.fenxiao
+        that.inite_data()
+        if (that.data.member.vip > 0)//是会员
         {
-          console.log('会员');
+          console.log('会员')
           that.setData({
-            show_vip:1,
+            show_vip: 1
           })
-        }
-        else//非会员
+        } else//非会员
         {
-          if(that.data.sys_ios==0)//安卓系统
+          if (that.data.sys_ios == 0)//安卓系统
           {
-            console.log('安卓系统');
+            console.log('安卓系统')
             that.setData({
-              show_vip:1
+              show_vip: 1
             })
-          }
-          else//苹果系统
+          } else//苹果系统
           {
-            if(res.data.data.d.version*1!=app.version*1)//不是审核版本
+            if (res.data.data.d.version * 1 != app.version * 1)//不是审核版本
             {
-              if(that.data.shouye_info.showvip==1)
-              {
-                console.log('强制展示');
+              if (that.data.shouye_info.showvip == 1) {
+                console.log('强制展示')
                 that.setData({
-                  show_vip:1
+                  show_vip: 1
                 })
               }
             }
@@ -238,18 +232,18 @@ Page({
         }
       },
       fail(res) {
-        console.log(res);
+        console.log(res)
       }
     })
   },
   // 退出登录
-  logout(){
-    let that = this;
+  logout() {
+    let that = this
     var userInfo = wx.setStorageSync('userInfo')
-    wx.setStorageSync('userInfo', '');
-    wx.setStorageSync('is_login', 0);
+    wx.setStorageSync('userInfo', '')
+    wx.setStorageSync('is_login', 0)
     that.setData({
-      is_login:0
+      is_login: 0
     })
     // getApp().util.request({
     //   'url': 'entry/wxapp/logout',
@@ -282,28 +276,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
+    var that = this
     wx.getSystemInfo({
-      success (res) {
+      success(res) {
         console.log(res.system)
-        if(res.system.indexOf("iOS") != -1)
-        {
-          console.log('苹果系统');
-        }
-        else
-        {
+        if (res.system.indexOf('iOS') != -1) {
+          console.log('苹果系统')
+        } else {
           that.setData({
-            sys_ios:0
+            sys_ios: 0
           })
-          console.log('安卓系统');
+          console.log('安卓系统')
         }
         app.mlib.login(function (response) {
-          that.inite();
-        
-        });
+          that.inite()
+
+        })
       }
     })
-   
+
   },
 
   /**
@@ -320,8 +311,8 @@ Page({
     let that = this
 
     app.mlib.login(function (response) {
-      that.inite();
-    });
+      that.inite()
+    })
 
     let hasArgeeProtocol = wx.getStorageSync('hasArgeeProtocol')
 

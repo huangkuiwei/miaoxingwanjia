@@ -12,10 +12,10 @@
     </view>
 
     <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="foot_right1" wx:if="{{(member.realtel=='')&&(gettel==1)}}">
-        <image style="width: 184rpx" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/dingzhi/save.png" mode="widthFix"></image>
+      <image style="width: 184rpx" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/dingzhi/save.png" mode="widthFix"></image>
     </button>
     <view class='foot_right1' bindtap='shenhe' wx:else>
-        <image style="width: 184rpx" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/dingzhi/save.png" mode="widthFix"></image>
+      <image style="width: 184rpx" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/dingzhi/save.png" mode="widthFix"></image>
     </view>
   </view>
 </view>

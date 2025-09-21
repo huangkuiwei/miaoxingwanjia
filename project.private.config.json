@@ -24,11 +24,18 @@
     "miniprogram": {
       "list": [
         {
-          "name": "zt_hbsjkh/pages/authorization/authorization",
-          "pathName": "zt_hbsjkh/pages/authorization/authorization",
+          "name": "zt_hbsjkh/pages/fenlei/fenlei",
+          "pathName": "zt_hbsjkh/pages/fenlei/fenlei",
           "query": "",
           "scene": null,
           "launchMode": "default"
+        },
+        {
+          "name": "zt_hbsjkh/pages/authorization/authorization",
+          "pathName": "zt_hbsjkh/pages/authorization/authorization",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         },
         {
           "name": "zt_hbsjkh/pages/wode/wode",

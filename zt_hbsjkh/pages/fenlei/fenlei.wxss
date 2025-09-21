@@ -2,7 +2,7 @@
 @import './jieguo.wxss';
 
 page {
-  background: url("https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/index/bg.png") left top/100% 388rpx no-repeat;
+  background: url("https://hnenjoy.oss-cn-shanghai.aliyuncs.com/miaoxingwanjia/fenlei/bg.png") left top/100% 800rpx no-repeat;
 }
 
 .container_head {
@@ -18,7 +18,7 @@ page {
   top: 0;
   padding-top: 100rpx;
   text-align: center;
-  z-index: 999;
+  z-index: 99999;
   font-weight: 500;
   font-size: 31rpx;
   color: #000000;
@@ -77,53 +77,172 @@ page {
 }
 
 .fenlei {
-  width: 750rpx;
+  /* width: 750rpx; */
   /* margin-top: 30rpx; */
-  border-top: 2rpx solid #F0EFEF;
-  position: absolute;
-  left: 0rpx;
-  right: 0rpx;
-  top: 111rpx;
-  bottom: 0rpx;
+  /* border-top: 2rpx solid #F0EFEF; */
+  /* position: absolute; */
+  /* left: 0rpx; */
+  /* right: 0rpx; */
+  /* top: 111rpx; */
+  /* bottom: 0rpx; */
+  /* overflow: hidden; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100% - 78rpx);
   overflow: hidden;
+}
+
+.temp-types {
+  flex-shrink: 0;
+  position: relative;
+}
+
+.temp-types-scroll {
+  height: 160rpx;
+  padding-left: 46rpx;
+  width: calc(100% - 80rpx);
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.all-btn {
+  position: absolute;
+  top: 10rpx;
+  right: 0;
+  width: 72rpx;
+  height: 155rpx;
+  background: #F0FFFF;
+  font-weight: 600;
+  font-size: 27rpx;
+  color: #3FDEE2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.float-type-list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  padding: 4rpx 44rpx 60rpx 46rpx;
+  top: 14rpx;
+  background: linear-gradient(158deg, #A1FDFF 0%, #FEFEFE 73%);
+  border-radius: 0rpx 0rpx 35rpx 35rpx;
+}
+
+.float-type-list-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 14rpx;
+}
+
+.hide-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hide-all text {
+  font-size: 26rpx;
+  color: #000000;
+  margin-right: 20rpx;
+}
+
+.hide-all image {
+  width: 25rpx;
+}
+
+.temp-types-item1 {
+  margin-right: 0 !important;
+}
+
+.temp-types-item {
+  white-space: nowrap;
+  margin-right: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.temp-types-item.active1 .type-name {
+  background: #4DF4F8;
+}
+
+.type-name {
+  margin-top: 8rpx;
+  font-size: 22rpx;
+  color: #000000;
+  width: 118rpx;
+  height: 39rpx;
+  border-radius: 19rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fenlei-bottom {
+  flex-grow: 1;
+  overflow: hidden;
+  display: flex;
+  background: #ffffff;
+  position: relative;
+}
+
+.mask-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
 }
 
 .fenlei_head {
   width: 158rpx;
   height: 100%;
-  position: absolute;
-  left: 0rpx;
-  background-color: #F4F4F4;
+  /* position: absolute; */
+  /* left: 0rpx; */
+  background-color: #F9F9F7;
 }
 
 .scroll-view-item {
   display: inline-block;
-  height: 78rpx;
+  height: 90rpx;
   width: 158rpx;
   position: relative;
 }
 
 .yellow_bar {
-  width: 6rpx;
-  height: 60rpx;
-  background-color: #FFDD02;
+  width: 8rpx;
+  height: 45rpx;
+  background-color: #4DF4F8;
   position: absolute;
+  border-radius: 4rpx;
   left: 0rpx;
-  top: 9rpx;
+  top: 30rpx;
   z-index: 999;
 }
 
 .scroll-view-item .right {
   color: #606060;
   width: 98rpx;
-  height: 60rpx;
-  line-height: 60rpx;
+  height: 90rpx;
+  line-height: 90rpx;
   width: 158rpx;
   font-size: 26rpx;
   text-align: center;
   position: absolute;
+  left: 0;
   right: 0rpx;
   top: 9rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .active {
@@ -132,17 +251,18 @@ page {
 }
 
 .fenlei_content {
-  width: 536rpx;
-  height: 100%;
-  position: absolute;
-  right: 34rpx;
-  top: 0rpx;
+  width: 552rpx;
+  /* width: 536rpx; */
+  height: calc(100% - 30rpx);
+  position: relative;
+  left: 20rpx;
+  /* top: 0rpx; */
   overflow: auto;
-  padding: 20rpx 0;
+  padding-top: 30rpx;
 }
 
 .fenlei_content_head {
-  width: 536rpx;
+  width: 552rpx;
   height: 46rpx;
   white-space: nowrap;
   margin-top: 15rpx;
@@ -171,11 +291,12 @@ page {
   background-color: #FFDD02;
 }
 .fenlei_content_show{
-
+  height: 100%;
+  overflow: auto;
 }
 .fenlei_content_show_left{
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 10rpx;
 }
 .fenlei_content_show_right{
@@ -185,7 +306,7 @@ page {
   min-height: 103%;
 }
 .fenlei_content_show image{
-  width: 150rpx;
+  width: 178rpx;
   height: 300rpx;
   margin-bottom: 15rpx;
   border-radius: 10rpx;
